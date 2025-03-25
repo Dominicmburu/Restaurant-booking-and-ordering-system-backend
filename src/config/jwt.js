@@ -1,0 +1,38 @@
+const jwt = require('jsonwebtoken');
+
+// Create JWT token
+exports.generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRE
+  });
+};
+
+// Set JWT token in cookie
+exports.sendTokenResponse = (user, statusCode, res) => {
+  // Create token
+  const token = this.generateToken(user.id);
+
+  const options = {
+    expires: new Date(
+      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true
+  };
+
+  // Secure in production
+  if (process.env.NODE_ENV === 'production') {
+    options.secure = true;
+  }
+
+  // Remove password from response
+  user.password = undefined;
+
+  res
+    .status(statusCode)
+    .cookie('token', token, options)
+    .json({
+      success: true,
+      token,
+      data: user
+    });
+};
