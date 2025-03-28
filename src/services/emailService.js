@@ -150,3 +150,128 @@ exports.sendBookingConfirmation = async (booking, customer) => {
     return false;
   }
 };
+
+exports.sendPasswordResetEmail = async (user, resetUrl) => {
+  try {
+    const transporter = await createTransporter();
+
+    // Create HTML email
+    const htmlContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background-color: #FFC107; padding: 20px; text-align: center; color: #333;">
+          <h1>Password Reset</h1>
+        </div>
+        
+        <div style="padding: 20px;">
+          <h2>Hello ${user.name},</h2>
+          <p>You are receiving this email because you (or someone else) has requested to reset the password for your account.</p>
+          
+          <div style="background-color: #f9f9f9; border-radius: 5px; padding: 15px; margin: 20px 0;">
+            <p>Please click the button below to reset your password:</p>
+            <div style="text-align: center;">
+              <a href="${resetUrl}" style="background-color: #FFC107; color: #333; text-decoration: none; padding: 10px 20px; border-radius: 5px; display: inline-block; font-weight: bold;">
+                Reset Password
+              </a>
+            </div>
+            <p style="margin-top: 15px;">If you didn't request this, please ignore this email and your password will remain unchanged.</p>
+            <p>This password reset link will expire in 10 minutes.</p>
+          </div>
+          
+          <p>If the button above doesn't work, please copy and paste the following URL into your browser:</p>
+          <p style="word-break: break-all;">${resetUrl}</p>
+        </div>
+        
+        <div style="background-color: #333; color: white; padding: 20px; text-align: center;">
+          <p>TurkNazz Restaurant</p>
+          <p>Authentic Turkish Cuisine in Birmingham</p>
+        </div>
+      </div>
+    `;
+
+    // Send email
+    await transporter.sendMail({
+      from: process.env.EMAIL_FROM,
+      to: user.email,
+      subject: 'TurkNazz - Password Reset',
+      html: htmlContent
+    });
+
+    logger.info(`Password reset email sent to ${user.email}`);
+    return true;
+  } catch (error) {
+    logger.error(`Email sending failed: ${error.message}`);
+    throw error;
+  }
+};
+
+exports.sendWelcomeEmail = async (user) => {
+  try {
+    const transporter = await createTransporter();
+
+    // Create HTML email
+    const htmlContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background-color: #FFC107; padding: 20px; text-align: center; color: #333;">
+          <h1>Welcome to TurkNazz!</h1>
+        </div>
+        
+        <div style="padding: 20px;">
+          <h2>Hello ${user.name},</h2>
+          <p>Thank you for joining TurkNazz! We're delighted to have you as a member of our community.</p>
+          
+          <div style="background-color: #f9f9f9; border-radius: 5px; padding: 15px; margin: 20px 0;">
+            <h3>What You Can Do Now</h3>
+            <ul style="padding-left: 20px; line-height: 1.6;">
+              <li><strong>Order Delicious Turkish Food</strong> - Browse our menu and enjoy authentic Turkish cuisine delivered to your door</li>
+              <li><strong>Book a Table</strong> - Reserve a table at any of our three convenient locations in Birmingham</li>
+              <li><strong>Save Your Favorites</strong> - Create a list of your favorite dishes for quick ordering</li>
+              <li><strong>Track Your Orders</strong> - See the status of your current and past orders</li>
+            </ul>
+          </div>
+          
+          <div style="background-color: #f9f9f9; border-radius: 5px; padding: 15px; margin: 20px 0;">
+            <h3>Our Locations</h3>
+            <p><strong>TurkNazz Shirley</strong><br />148-150 Stratford Road, Birmingham, B90 3BD</p>
+            <p><strong>TurkNazz Moseley</strong><br />107 Alcester Road, Birmingham, B13 8DD</p>
+            <p><strong>TurkNazz Sutton Coldfield</strong><br />22 Beeches Walk, Birmingham, B73 6HN</p>
+          </div>
+          
+          <div style="text-align: center; margin-top: 30px;">
+            <a href="${process.env.FRONTEND_URL}/menu" style="background-color: #FFC107; color: #333; text-decoration: none; padding: 12px 24px; border-radius: 5px; display: inline-block; font-weight: bold;">
+              Explore Our Menu
+            </a>
+          </div>
+          
+          <p style="margin-top: 30px;">If you have any questions or need assistance, please don't hesitate to contact us at <a href="mailto:info@turknazz.com">info@turknazz.com</a> or call us at <a href="tel:+441234567890">0121 XXX XXXX</a>.</p>
+          
+          <p>We look forward to serving you!</p>
+          <p><em>The TurkNazz Team</em></p>
+        </div>
+        
+        <div style="background-color: #333; color: white; padding: 20px; text-align: center;">
+          <p>TurkNazz Restaurant</p>
+          <p>Authentic Turkish Cuisine in Birmingham</p>
+          <div style="margin-top: 15px;">
+            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Facebook</a>
+            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Instagram</a>
+            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Twitter</a>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Send email
+    await transporter.sendMail({
+      from: process.env.EMAIL_FROM,
+      to: user.email,
+      subject: 'Welcome to TurkNazz Restaurant!',
+      html: htmlContent
+    });
+
+    logger.info(`Welcome email sent to ${user.email}`);
+    return true;
+  } catch (error) {
+    logger.error(`Welcome email sending failed: ${error.message}`);
+    return false;
+  }
+};

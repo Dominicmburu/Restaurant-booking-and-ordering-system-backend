@@ -62,3 +62,8 @@ turknazz-backend/
 
 1. npx prisma db pull to turn your database schema into a Prisma schema.
 2. Run npx prisma generate
+
+npx prisma migrate dev --name init
+
+
+https://claude.ai/chat/b6962af4-7f60-4810-bf0e-d5ecc3ab397d

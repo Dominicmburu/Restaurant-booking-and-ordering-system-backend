@@ -1,17 +1,30 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
-const bcrypt = require('bcrypt');
+const crypto = require('crypto');
 const ErrorResponse = require('../utils/errors');
 const { sendTokenResponse } = require('../config/jwt');
+const { sendWelcomeEmail } = require('../services/emailService');
 
-// @desc    Register user
-// @route   POST /api/auth/register
-// @access  Public
+const hashPassword = (password) => {
+  const salt = crypto.randomBytes(16).toString('hex');
+  
+  const hash = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+  
+  return `${salt}:${hash}`;
+};
+
+const verifyPassword = (password, storedHash) => {
+  const [salt, hash] = storedHash.split(':');
+  
+  const calculatedHash = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+  
+  return calculatedHash === hash;
+};
+
 exports.register = async (req, res, next) => {
   try {
     const { name, email, password, phone } = req.body;
 
-    // Check if user exists
     const userExists = await prisma.user.findUnique({
       where: { email }
     });
@@ -20,11 +33,8 @@ exports.register = async (req, res, next) => {
       return next(new ErrorResponse('Email already in use', 400));
     }
 
-    // Hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashedPassword = hashPassword(password);
 
-    // Create user
     const user = await prisma.user.create({
       data: {
         name,
@@ -34,26 +44,25 @@ exports.register = async (req, res, next) => {
       }
     });
 
-    // Send token response
-    sendTokenResponse(user, 201, res);
+    await sendWelcomeEmail(user).catch(err => {
+      logger.error(`Failed to send welcome email: ${err.message}`);
+    });
+
+    sendTokenResponse(user, 201, res, "User registered successfully");
   } catch (error) {
     next(error);
   }
 };
 
-// @desc    Login user
-// @route   POST /api/auth/login
-// @access  Public
+
 exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    // Validate email & password
     if (!email || !password) {
       return next(new ErrorResponse('Please provide an email and password', 400));
     }
 
-    // Check for user
     const user = await prisma.user.findUnique({
       where: { email }
     });
@@ -62,23 +71,18 @@ exports.login = async (req, res, next) => {
       return next(new ErrorResponse('Invalid credentials', 401));
     }
 
-    // Check if password matches
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = verifyPassword(password, user.password);
 
     if (!isMatch) {
       return next(new ErrorResponse('Invalid credentials', 401));
     }
 
-    // Send token response
     sendTokenResponse(user, 200, res);
   } catch (error) {
     next(error);
   }
 };
 
-// @desc    Log user out / clear cookie
-// @route   GET /api/auth/logout
-// @access  Private
 exports.logout = async (req, res, next) => {
   try {
     res.cookie('token', 'none', {
@@ -88,16 +92,13 @@ exports.logout = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      data: {}
+      message: 'Logged out successfully',
     });
   } catch (error) {
     next(error);
   }
 };
 
-// @desc    Get current logged in user
-// @route   GET /api/auth/me
-// @access  Private
 exports.getMe = async (req, res, next) => {
   try {
     const user = await prisma.user.findUnique({

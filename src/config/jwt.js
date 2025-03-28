@@ -1,15 +1,12 @@
 const jwt = require('jsonwebtoken');
 
-// Create JWT token
 exports.generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE
   });
 };
 
-// Set JWT token in cookie
-exports.sendTokenResponse = (user, statusCode, res) => {
-  // Create token
+exports.sendTokenResponse = (user, statusCode, res, message) => {
   const token = this.generateToken(user.id);
 
   const options = {
@@ -19,12 +16,10 @@ exports.sendTokenResponse = (user, statusCode, res) => {
     httpOnly: true
   };
 
-  // Secure in production
   if (process.env.NODE_ENV === 'production') {
     options.secure = true;
   }
 
-  // Remove password from response
   user.password = undefined;
 
   res
@@ -33,6 +28,7 @@ exports.sendTokenResponse = (user, statusCode, res) => {
     .json({
       success: true,
       token,
-      data: user
+      data: user,
+      message,
     });
 };

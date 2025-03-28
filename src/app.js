@@ -10,7 +10,7 @@ const { requestLogger } = require('./middlewares/requestLogger');
 // Initialize express
 const app = express();
 
-// Body parser
+// Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

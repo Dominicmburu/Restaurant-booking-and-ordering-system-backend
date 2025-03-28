@@ -1,0 +1,500 @@
+2025-03-26 13:12:23 [31merror[39m: Cannot read properties of undefined (reading 'findUnique')
+2025-03-26 13:17:01 [31merror[39m: Cannot read properties of undefined (reading 'findUnique')
+2025-03-26 13:17:12 [31merror[39m: Cannot read properties of undefined (reading 'findUnique')
+2025-03-26 13:20:26 [31merror[39m: Cannot read properties of undefined (reading 'findUnique')
+2025-03-26 13:24:10 [31merror[39m: Cannot read properties of undefined (reading 'findUnique')
+2025-03-26 13:28:09 [31merror[39m: Cannot read properties of undefined (reading 'findUnique')
+2025-03-26 13:29:28 [31merror[39m: Cannot read properties of undefined (reading 'findUnique')
+2025-03-26 13:30:18 [31merror[39m: Cannot read properties of undefined (reading 'findUnique')
+2025-03-26 13:50:51 [31merror[39m: message is not defined
+2025-03-26 13:51:32 [31merror[39m: Email already in use
+2025-03-26 13:51:49 [31merror[39m: user is not defined
+2025-03-26 13:52:36 [31merror[39m: Email already in use
+2025-03-26 14:00:24 [31merror[39m: Cannot read properties of undefined (reading 'status')
+2025-03-26 14:00:46 [31merror[39m: Cannot read properties of undefined (reading 'status')
+2025-03-26 14:04:27 [31merror[39m: Not authorized to access this route
+2025-03-26 14:04:50 [31merror[39m: Not authorized to access this route
+2025-03-26 14:05:41 [31merror[39m: Not authorized to access this route
+2025-03-26 14:12:08 [31merror[39m: Not authorized to access this route
+2025-03-26 14:12:39 [31merror[39m: Not authorized to access this route
+2025-03-26 14:13:11 [31merror[39m: Not authorized to access this route
+2025-03-26 14:14:27 [31merror[39m: Not authorized to access this route
+2025-03-26 14:22:09 [31merror[39m: User role 'CUSTOMER' is not authorized to access this route
+2025-03-26 14:23:07 [31merror[39m: Invalid credentials
+2025-03-26 14:24:11 [31merror[39m: crypto.randomBytes is not a function
+2025-03-26 14:32:26 [31merror[39m: 
+Invalid `prisma.user.update()` invocation in
+C:\DEV\restaurant-booking-and-ordering-system-backend\src\controllers\userController.js:129:36
+
+  126 // Remove password from update data
+  127 const { password, ...updateData } = req.body;
+  128 
+→ 129 const user = await prisma.user.update({
+        where: {
+          id: "ee825e75-2824-43e5-ae0a-1cbbf952b08d"
+        },
+        data: {
+          currentPassword: "Password123!",
+          ~~~~~~~~~~~~~~~
+          newPassword: "NewPassword123!",
+      ?   id?: String | StringFieldUpdateOperationsInput,
+      ?   name?: String | StringFieldUpdateOperationsInput,
+      ?   email?: String | StringFieldUpdateOperationsInput,
+      ?   password?: String | StringFieldUpdateOperationsInput,
+      ?   phone?: String | NullableStringFieldUpdateOperationsInput | Null,
+      ?   role?: Role | EnumRoleFieldUpdateOperationsInput,
+      ?   resetToken?: String | NullableStringFieldUpdateOperationsInput | Null,
+      ?   resetExpires?: DateTime | NullableDateTimeFieldUpdateOperationsInput | Null,
+      ?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,
+      ?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,
+      ?   orders?: OrderUpdateManyWithoutUserNestedInput,
+      ?   bookings?: BookingUpdateManyWithoutUserNestedInput
+        },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          phone: true,
+          role: true,
+          createdAt: true
+        }
+      })
+
+Unknown argument `currentPassword`. Available options are marked with ?.
+2025-03-26 14:41:37 [31merror[39m: 
+Invalid `prisma.user.update()` invocation in
+C:\DEV\restaurant-booking-and-ordering-system-backend\src\controllers\userController.js:134:36
+
+  131   updateData.password = hashedPassword;
+  132 }
+  133 
+→ 134 const user = await prisma.user.update({
+        where: {
+          id: "ee825e75-2824-43e5-ae0a-1cbbf952b08d"
+        },
+        data: {
+          currentPassword: "Password123!",
+          ~~~~~~~~~~~~~~~
+          newPassword: "NewPassword123!",
+      ?   id?: String | StringFieldUpdateOperationsInput,
+      ?   name?: String | StringFieldUpdateOperationsInput,
+      ?   email?: String | StringFieldUpdateOperationsInput,
+      ?   password?: String | StringFieldUpdateOperationsInput,
+      ?   phone?: String | NullableStringFieldUpdateOperationsInput | Null,
+      ?   role?: Role | EnumRoleFieldUpdateOperationsInput,
+      ?   resetToken?: String | NullableStringFieldUpdateOperationsInput | Null,
+      ?   resetExpires?: DateTime | NullableDateTimeFieldUpdateOperationsInput | Null,
+      ?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,
+      ?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,
+      ?   orders?: OrderUpdateManyWithoutUserNestedInput,
+      ?   bookings?: BookingUpdateManyWithoutUserNestedInput
+        },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          phone: true,
+          role: true,
+          createdAt: true
+        }
+      })
+
+Unknown argument `currentPassword`. Available options are marked with ?.
+2025-03-26 14:52:54 [31merror[39m: Current password is incorrect
+2025-03-26 15:03:26 [31merror[39m: User not found with id of ee825e75-2824-43e5-ae0a-1cbbf952b08d
+2025-03-26 15:09:46 [31merror[39m: 
+Invalid `prisma.restaurant.delete()` invocation in
+C:\DEV\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:110:35
+
+  107   return next(new ErrorResponse(`Restaurant not found with id of ${req.params.id}`, 404));
+  108 }
+  109 
+→ 110 await prisma.restaurant.delete(
+Foreign key constraint violated: `MenuItem_restaurantId_fkey (index)`
+2025-03-26 15:11:24 [31merror[39m: 
+Invalid `prisma.restaurant.delete()` invocation in
+C:\DEV\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:110:35
+
+  107   return next(new ErrorResponse(`Restaurant not found with id of ${req.params.id}`, 404));
+  108 }
+  109 
+→ 110 await prisma.restaurant.delete(
+Foreign key constraint violated: `MenuItem_restaurantId_fkey (index)`
+2025-03-26 15:20:04 [31merror[39m: 
+Invalid `prisma.restaurant.delete()` invocation in
+C:\DEV\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:110:35
+
+  107   return next(new ErrorResponse(`Restaurant not found with id of ${req.params.id}`, 404));
+  108 }
+  109 
+→ 110 await prisma.restaurant.delete(
+Foreign key constraint violated: `MenuItem_restaurantId_fkey (index)`
+2025-03-26 15:21:43 [31merror[39m: 
+Invalid `prisma.restaurant.delete()` invocation in
+C:\DEV\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:110:35
+
+  107   return next(new ErrorResponse(`Restaurant not found with id of ${req.params.id}`, 404));
+  108 }
+  109 
+→ 110 await prisma.restaurant.delete(
+Foreign key constraint violated: `MenuItem_restaurantId_fkey (index)`
+2025-03-26 15:24:49 [31merror[39m: Restaurant not found
+2025-03-26 15:38:37 [31merror[39m: Menu item not found with id of popular
+2025-03-26 15:39:51 [31merror[39m: Menu item not found with id of popular
+2025-03-26 15:54:46 [31merror[39m: Restaurant not found
+2025-03-27 16:58:14 [31merror[39m: Stripe connection error: Invalid API Key provided: sk_test_*********_key
+2025-03-27 19:32:01 [31merror[39m: Restaurant not found
+2025-03-27 19:45:44 [31merror[39m: Restaurant not found
+2025-03-27 19:46:18 [31merror[39m: Restaurant not found
+2025-03-27 19:47:04 [31merror[39m: Restaurant not found
+2025-03-27 19:53:46 [31merror[39m: 
+Invalid `prisma.table.findUnique()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\bookingController.js:33:40
+
+  30 
+  31 // Check if the table exists and is available
+  32 if (tableId) {
+→ 33   const table = await prisma.table.findUnique({
+         where: {
+           id: 3
+               ~
+         }
+       })
+
+Argument `id`: Invalid value provided. Expected String, provided Int.
+2025-03-27 21:01:13 [31merror[39m: No tables found for this restaurant
+2025-03-27 21:10:48 [31merror[39m: No tables found for this restaurant
+2025-03-27 21:11:11 [31merror[39m: No tables found for this restaurant
+2025-03-27 21:29:36 [31merror[39m: No tables found for this restaurant
+2025-03-27 21:35:13 [31merror[39m: One or more menu items not found
+2025-03-27 21:48:56 [31merror[39m: Restaurant not found
+2025-03-27 21:49:50 [31merror[39m: 
+Invalid `prisma.booking.create()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\bookingController.js:55:42
+
+  52 const bookingNumber = `BK-${Date.now().toString().substring(7)}`;
+  53 
+  54 // Create booking
+→ 55 const booking = await prisma.booking.create({
+       data: {
+         bookingNumber: "BK-390053",
+         date: new Date("Invalid Date"),
+               ~~~~~~~~~~~~~~~~~~~~~~~~
+         time: undefined,
+         guests: undefined,
+         specialRequests: undefined,
+         restaurant: {
+           connect: {
+             id: "cedd0293-b123-471c-b8a4-fd53f997903f"
+           }
+         },
+         table: undefined,
+         user: undefined
+       },
+       include: {
+         restaurant: true,
+         table: true
+       }
+     })
+
+Invalid value for argument `date`: Provided Date object is invalid. Expected Date.
+2025-03-27 21:57:38 [31merror[39m: One or more menu items not found
+2025-03-27 22:25:32 [31merror[39m: One or more menu items not found
+2025-03-27 22:34:38 [31merror[39m: One or more menu items not found
+2025-03-27 22:37:18 [31merror[39m: One or more menu items not found
+2025-03-27 22:38:50 [31merror[39m: One or more menu items not found
+2025-03-27 22:41:53 [31merror[39m: One or more menu items not found
+2025-03-27 22:44:24 [31merror[39m: One or more menu items not found
+2025-03-27 22:47:01 [31merror[39m: One or more menu items not found
+2025-03-27 22:48:13 [31merror[39m: One or more menu items not found
+2025-03-27 22:50:07 [31merror[39m: One or more menu items not found
+2025-03-27 22:50:36 [31merror[39m: 
+Invalid `prisma.orderItem.createMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\orderController.js:108:30
+
+  105   };
+  106 });
+  107 
+→ 108 await prisma.orderItem.createMany({
+        data: [
+          {
+            quantity: 2,
+            price: new Prisma.Decimal("6.49"),
+            notes: "Extra spicy sauce",
+            order: {
+              connect: {
+                id: "169ebaa3-0dde-4c04-a608-13bb4bc56a55"
+              }
+            },
+            menuItem: {
+              connect: {
+                id: "0e955542-ccd2-4e6b-a294-f3b11dd76a89"
+              }
+            }
+          },
+          {
+            quantity: 1,
+            price: new Prisma.Decimal("5.99"),
+            notes: "Add cheese",
+            order: {
+              connect: {
+                id: "169ebaa3-0dde-4c04-a608-13bb4bc56a55"
+              }
+            },
+            menuItem: {
+              connect: {
+                id: "02c15b13-1537-4d75-9e54-eb95c1f408ae"
+              }
+            }
+          }
+        ]
+      })
+
+Argument `orderId` is missing.
+2025-03-28 06:16:34 [31merror[39m: 
+Invalid `prisma.restaurant.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:10:49
+
+   7 // @access  Public
+   8 exports.getRestaurants = async (req, res, next) => {
+   9   try {
+→ 10     const restaurants = await prisma.restaurant.findMany(
+The table `public.Restaurant` does not exist in the current database.
+2025-03-28 06:16:34 [31merror[39m: 
+Invalid `prisma.restaurant.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:10:49
+
+   7 // @access  Public
+   8 exports.getRestaurants = async (req, res, next) => {
+   9   try {
+→ 10     const restaurants = await prisma.restaurant.findMany(
+The table `public.Restaurant` does not exist in the current database.
+2025-03-28 06:16:43 [31merror[39m: 
+Invalid `prisma.restaurant.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:10:49
+
+   7 // @access  Public
+   8 exports.getRestaurants = async (req, res, next) => {
+   9   try {
+→ 10     const restaurants = await prisma.restaurant.findMany(
+The table `public.Restaurant` does not exist in the current database.
+2025-03-28 06:16:43 [31merror[39m: 
+Invalid `prisma.restaurant.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:10:49
+
+   7 // @access  Public
+   8 exports.getRestaurants = async (req, res, next) => {
+   9   try {
+→ 10     const restaurants = await prisma.restaurant.findMany(
+The table `public.Restaurant` does not exist in the current database.
+2025-03-28 06:16:44 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:10:45
+
+   7 // @access  Public
+   8 exports.getMenuItems = async (req, res, next) => {
+   9   try {
+→ 10     const menuItems = await prisma.menuItem.findMany(
+The table `public.MenuItem` does not exist in the current database.
+2025-03-28 06:16:44 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:10:45
+
+   7 // @access  Public
+   8 exports.getMenuItems = async (req, res, next) => {
+   9   try {
+→ 10     const menuItems = await prisma.menuItem.findMany(
+The table `public.MenuItem` does not exist in the current database.
+2025-03-28 06:16:47 [31merror[39m: 
+Invalid `prisma.restaurant.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:10:49
+
+   7 // @access  Public
+   8 exports.getRestaurants = async (req, res, next) => {
+   9   try {
+→ 10     const restaurants = await prisma.restaurant.findMany(
+The table `public.Restaurant` does not exist in the current database.
+2025-03-28 06:16:47 [31merror[39m: 
+Invalid `prisma.restaurant.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:10:49
+
+   7 // @access  Public
+   8 exports.getRestaurants = async (req, res, next) => {
+   9   try {
+→ 10     const restaurants = await prisma.restaurant.findMany(
+The table `public.Restaurant` does not exist in the current database.
+2025-03-28 06:16:52 [31merror[39m: 
+Invalid `prisma.restaurant.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:10:49
+
+   7 // @access  Public
+   8 exports.getRestaurants = async (req, res, next) => {
+   9   try {
+→ 10     const restaurants = await prisma.restaurant.findMany(
+The table `public.Restaurant` does not exist in the current database.
+2025-03-28 06:16:52 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:10:45
+
+   7 // @access  Public
+   8 exports.getMenuItems = async (req, res, next) => {
+   9   try {
+→ 10     const menuItems = await prisma.menuItem.findMany(
+The table `public.MenuItem` does not exist in the current database.
+2025-03-28 06:16:52 [31merror[39m: 
+Invalid `prisma.restaurant.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\restaurantController.js:10:49
+
+   7 // @access  Public
+   8 exports.getRestaurants = async (req, res, next) => {
+   9   try {
+→ 10     const restaurants = await prisma.restaurant.findMany(
+The table `public.Restaurant` does not exist in the current database.
+2025-03-28 06:16:52 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:10:45
+
+   7 // @access  Public
+   8 exports.getMenuItems = async (req, res, next) => {
+   9   try {
+→ 10     const menuItems = await prisma.menuItem.findMany(
+The table `public.MenuItem` does not exist in the current database.
+2025-03-28 06:24:52 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:10:45
+
+   7 // @access  Public
+   8 exports.getMenuItems = async (req, res, next) => {
+   9   try {
+→ 10     const menuItems = await prisma.menuItem.findMany(
+The column `MenuItem.restaurantId` does not exist in the current database.
+2025-03-28 06:24:52 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:10:45
+
+   7 // @access  Public
+   8 exports.getMenuItems = async (req, res, next) => {
+   9   try {
+→ 10     const menuItems = await prisma.menuItem.findMany(
+The column `MenuItem.restaurantId` does not exist in the current database.
+2025-03-28 06:24:57 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:10:45
+
+   7 // @access  Public
+   8 exports.getMenuItems = async (req, res, next) => {
+   9   try {
+→ 10     const menuItems = await prisma.menuItem.findMany(
+The column `MenuItem.restaurantId` does not exist in the current database.
+2025-03-28 06:24:57 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:10:45
+
+   7 // @access  Public
+   8 exports.getMenuItems = async (req, res, next) => {
+   9   try {
+→ 10     const menuItems = await prisma.menuItem.findMany(
+The column `MenuItem.restaurantId` does not exist in the current database.
+2025-03-28 06:29:32 [31merror[39m: User not found
+2025-03-28 06:37:03 [31merror[39m: 
+Invalid `prisma.orderItem.createMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\orderController.js:107:30
+
+  104   };
+  105 });
+  106 
+→ 107 await prisma.orderItem.createMany({
+        data: [
+          {
+            quantity: 2,
+            price: new Prisma.Decimal("7.99"),
+            notes: "Extra sauce please",
+            order: {
+              connect: {
+                id: "1e3f6b64-6b1c-476f-9742-0dff0b49653d"
+              }
+            },
+            menuItem: {
+              connect: {
+                id: "0ed41ac9-dd15-4941-8e2e-2d210b71d1f9"
+              }
+            }
+          },
+          {
+            quantity: 1,
+            price: new Prisma.Decimal("2.99"),
+            notes: "No onions",
+            order: {
+              connect: {
+                id: "1e3f6b64-6b1c-476f-9742-0dff0b49653d"
+              }
+            },
+            menuItem: {
+              connect: {
+                id: "14cad70c-c50b-4e4f-a400-8b351eb00342"
+              }
+            }
+          }
+        ]
+      })
+
+Argument `orderId` is missing.
+2025-03-28 06:41:20 [31merror[39m: 
+Invalid `prisma.orderItem.create()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\orderController.js:107:30
+
+  104   };
+  105 });
+  106 
+→ 107 await prisma.orderItem.create({
+        data: [
+          {
+            quantity: 2,
+            price: new Prisma.Decimal("7.99"),
+            notes: "Extra sauce please",
+            order: {
+              connect: {
+                id: "bed06a96-b646-4014-b753-4fc965b28de2"
+              }
+            },
+            menuItem: {
+              connect: {
+                id: "0ed41ac9-dd15-4941-8e2e-2d210b71d1f9"
+              }
+            }
+          },
+          {
+            quantity: 1,
+            price: new Prisma.Decimal("2.99"),
+            notes: "No onions",
+            order: {
+              connect: {
+                id: "bed06a96-b646-4014-b753-4fc965b28de2"
+              }
+            },
+            menuItem: {
+              connect: {
+                id: "14cad70c-c50b-4e4f-a400-8b351eb00342"
+              }
+            }
+          }
+        ]
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      })
+
+Argument `data`: Invalid value provided. Expected OrderItemCreateInput or OrderItemUncheckedCreateInput, provided (Object, Object).
+2025-03-28 06:43:18 [31merror[39m: Payment session creation failed: createCheckoutSession is not defined
+2025-03-28 06:43:18 [31merror[39m: Payment processing failed
+2025-03-28 07:44:42 [31merror[39m: No tables found for this restaurant
+2025-03-28 08:45:32 [31merror[39m: Not authorized to access this route
+2025-03-28 08:45:32 [31merror[39m: Not authorized to access this route
+2025-03-28 08:45:33 [31merror[39m: Not authorized to access this route
+2025-03-28 08:45:33 [31merror[39m: Not authorized to access this route
+2025-03-28 08:45:39 [31merror[39m: Not authorized to access this route
+2025-03-28 08:45:39 [31merror[39m: Not authorized to access this route
+2025-03-28 08:45:39 [31merror[39m: Not authorized to access this route
+2025-03-28 08:45:39 [31merror[39m: Not authorized to access this route
+2025-03-28 08:46:01 [31merror[39m: Not authorized to access this route
+2025-03-28 08:46:01 [31merror[39m: Not authorized to access this route
+2025-03-28 08:46:01 [31merror[39m: Not authorized to access this route
+2025-03-28 08:46:01 [31merror[39m: Not authorized to access this route
