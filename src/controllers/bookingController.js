@@ -4,9 +4,7 @@ const ErrorResponse = require('../utils/errors');
 const { sendBookingConfirmation } = require('../services/emailService');
 const { logger } = require('../utils/logger');
 
-// @desc    Create new booking
-// @route   POST /api/bookings
-// @access  Public
+
 exports.createBooking = async (req, res, next) => {
   try {
     const {
@@ -19,7 +17,6 @@ exports.createBooking = async (req, res, next) => {
       customer
     } = req.body;
 
-    // Check if restaurant exists
     const restaurant = await prisma.restaurant.findUnique({
       where: { id: restaurantId }
     });
@@ -28,7 +25,6 @@ exports.createBooking = async (req, res, next) => {
       return next(new ErrorResponse('Restaurant not found', 404));
     }
 
-    // Check if the table exists and is available
     if (tableId) {
       const table = await prisma.table.findUnique({
         where: { id: tableId }

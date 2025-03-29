@@ -2051,3 +2051,233 @@ Argument `data`: Invalid value provided. Expected OrderItemCreateInput or OrderI
 2025-03-28 09:04:14 [32minfo[39m: GET /api/orders
 2025-03-28 09:04:14 [32minfo[39m: GET /api/bookings
 2025-03-28 09:05:33 [32minfo[39m: SIGINT received, shutting down Prisma client gracefully
+2025-03-28 21:03:27 [32minfo[39m: Prisma client initialized
+2025-03-28 21:03:27 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:03:27 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:03:30 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:03:30 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:04:47 [32minfo[39m: GET /api/menu
+2025-03-28 21:04:47 [32minfo[39m: GET /api/menu
+2025-03-28 21:05:10 [32minfo[39m: GET /api/restaurants
+2025-03-28 21:05:11 [32minfo[39m: GET /api/restaurants
+2025-03-28 21:05:14 [32minfo[39m: GET /api/menu
+2025-03-28 21:05:14 [32minfo[39m: GET /api/menu
+2025-03-28 21:05:22 [32minfo[39m: GET /api/restaurants
+2025-03-28 21:05:22 [32minfo[39m: GET /api/restaurants
+2025-03-28 21:06:24 [32minfo[39m: POST /api/orders
+2025-03-28 21:06:30 [32minfo[39m: Payment session created for order: 3e031ea6-f887-49bd-acec-b9d26b027bb4, email: oliviamarjorie787@gmail.com
+2025-03-28 21:08:32 [32minfo[39m: GET /api/payments/verify-session/cs_test_b16mmwBmQZhnY2b6mV9zz98sbZNOuzpV8yU8dcDTbUpoWtBEmlS3ksFXdm
+2025-03-28 21:08:37 [32minfo[39m: Order confirmation email sent to oliviamarjorie787@gmail.com
+2025-03-28 21:08:37 [32minfo[39m: GET /api/payments/verify-session/cs_test_b16mmwBmQZhnY2b6mV9zz98sbZNOuzpV8yU8dcDTbUpoWtBEmlS3ksFXdm
+2025-03-28 21:08:37 [32minfo[39m: POST /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4/payment-success
+2025-03-28 21:08:42 [32minfo[39m: Order confirmation email sent to oliviamarjorie787@gmail.com
+2025-03-28 21:08:42 [32minfo[39m: POST /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4/payment-success
+2025-03-28 21:09:15 [32minfo[39m: GET /api/restaurants
+2025-03-28 21:09:15 [32minfo[39m: GET /api/restaurants
+2025-03-28 21:09:22 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-28 21:18:25 [32minfo[39m: Prisma client initialized
+2025-03-28 21:18:25 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:18:25 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:18:28 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:18:28 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:19:08 [32minfo[39m: Prisma client initialized
+2025-03-28 21:19:11 [32minfo[39m: Prisma client initialized
+2025-03-28 21:19:12 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:19:12 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:19:14 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:19:14 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:19:45 [32minfo[39m: Prisma client initialized
+2025-03-28 21:19:46 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:19:46 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:19:49 [32minfo[39m: Prisma client initialized
+2025-03-28 21:19:49 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:19:49 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:19:52 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:19:52 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:20:20 [32minfo[39m: Prisma client initialized
+2025-03-28 21:20:24 [32minfo[39m: Prisma client initialized
+2025-03-28 21:20:25 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:20:25 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:20:29 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:20:29 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:21:57 [32minfo[39m: Prisma client initialized
+2025-03-28 21:21:57 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:21:57 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:01 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:01 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:01 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:09 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:09 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:09 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:14 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:14 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:14 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:20 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:20 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:20 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:22 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:22:22 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:22:27 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:27 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:27 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:29 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:22:29 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:22:32 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:32 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:32 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:34 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:22:34 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:22:36 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:37 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:37 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:40 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:40 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:40 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:22:47 [32minfo[39m: Prisma client initialized
+2025-03-28 21:22:47 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:22:47 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:23:12 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:23:12 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:23:19 [32minfo[39m: Prisma client initialized
+2025-03-28 21:23:29 [32minfo[39m: Prisma client initialized
+2025-03-28 21:23:32 [32minfo[39m: Prisma client initialized
+2025-03-28 21:23:33 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:23:33 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:23:35 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:23:35 [32minfo[39m: Server running in development mode on port 5000
+2025-03-28 21:24:18 [32minfo[39m: Prisma client initialized
+2025-03-28 21:24:18 [32minfo[39m: Database connected successfully 🚀
+2025-03-28 21:24:18 [32minfo[39m: Connected to database: turknazz_db
+2025-03-28 21:24:20 [32minfo[39m: Stripe connection successful 💰
+2025-03-28 21:24:20 [32minfo[39m: Server running in development mode on port 5000
+2025-03-29 10:05:12 [32minfo[39m: Prisma client initialized
+2025-03-29 10:05:12 [32minfo[39m: Database connected successfully 🚀
+2025-03-29 10:05:12 [32minfo[39m: Connected to database: turknazz_db
+2025-03-29 10:05:15 [32minfo[39m: Stripe connection successful 💰
+2025-03-29 10:05:15 [32minfo[39m: Server running in development mode on port 5000
+2025-03-29 10:06:06 [32minfo[39m: POST /api/auth/login
+2025-03-29 10:06:07 [32minfo[39m: GET /api/orders
+2025-03-29 10:06:07 [32minfo[39m: GET /api/bookings
+2025-03-29 10:06:07 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:06:07 [32minfo[39m: GET /api/menu
+2025-03-29 10:06:07 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:06:07 [32minfo[39m: GET /api/menu
+2025-03-29 10:06:07 [32minfo[39m: GET /api/orders
+2025-03-29 10:06:07 [32minfo[39m: GET /api/bookings
+2025-03-29 10:08:08 [32minfo[39m: GET /api/menu/category/kebabs
+2025-03-29 10:08:08 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:125:45
+
+  122 // @access  Public
+  123 exports.getMenuItemsByCategory = async (req, res, next) => {
+  124   try {
+→ 125     const menuItems = await prisma.menuItem.findMany({
+            where: {
+              category: "kebabs"
+            },
+            include: {
+              restaurant: true,
+              ~~~~~~~~~~
+          ?   orderItems?: true
+            }
+          })
+
+Unknown field `restaurant` for include statement on model `MenuItem`. Available options are marked with ?.
+2025-03-29 10:08:30 [32minfo[39m: GET /api/menu/fdeb1a9e-a756-4238-929e-33e05894805c
+2025-03-29 10:08:30 [31merror[39m: Menu item not found with id of fdeb1a9e-a756-4238-929e-33e05894805c
+2025-03-29 10:08:41 [32minfo[39m: GET /api/menu
+2025-03-29 10:09:03 [32minfo[39m: GET /api/menu/d08f9bd2-79ea-4847-8f29-64c4a49d8968
+2025-03-29 10:09:27 [32minfo[39m: DELETE /api/menu/1ae8f2ab-ae38-41b7-9772-963cf431bb44
+2025-03-29 10:09:27 [31merror[39m: Menu item not found with id of 1ae8f2ab-ae38-41b7-9772-963cf431bb44
+2025-03-29 10:10:39 [32minfo[39m: DELETE /api/menu/7e472ee4-2a72-4372-86a0-7b97ff0ef410
+2025-03-29 10:10:53 [32minfo[39m: GET /api/menu
+2025-03-29 10:16:43 [32minfo[39m: GET /api/orders
+2025-03-29 10:16:43 [32minfo[39m: GET /api/bookings
+2025-03-29 10:16:43 [32minfo[39m: GET /api/menu
+2025-03-29 10:16:43 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:16:43 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:16:43 [32minfo[39m: GET /api/menu
+2025-03-29 10:16:44 [32minfo[39m: GET /api/orders
+2025-03-29 10:16:44 [32minfo[39m: GET /api/bookings
+2025-03-29 10:20:55 [32minfo[39m: GET /api/menu
+2025-03-29 10:20:55 [32minfo[39m: GET /api/menu
+2025-03-29 10:23:21 [32minfo[39m: POST /api/menu
+2025-03-29 10:23:52 [32minfo[39m: PUT /api/menu/3dabba82-18da-4c3c-8d84-fe36aefe2b59
+2025-03-29 10:24:04 [32minfo[39m: PUT /api/menu/3dabba82-18da-4c3c-8d84-fe36aefe2b59
+2025-03-29 10:26:11 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:26:25 [32minfo[39m: GET /api/restaurants/8b96c3d7-dbc9-4b24-b1ff-282b27d77f20/menu
+2025-03-29 10:26:25 [31merror[39m: Restaurant not found with id of 8b96c3d7-dbc9-4b24-b1ff-282b27d77f20
+2025-03-29 10:30:02 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:30:28 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:32:45 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-29 10:40:22 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:40:22 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:40:22 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-29 10:40:41 [32minfo[39m: GET /api/table/853f3c44-cf8f-46e5-be5d-db9ddc2a31f0
+2025-03-29 10:40:48 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-29 10:41:39 [32minfo[39m: PUT /api/table/2888deea-65e2-4fbc-97b1-f77a3acd50e8
+2025-03-29 10:41:48 [32minfo[39m: PUT /api/table/2888deea-65e2-4fbc-97b1-f77a3acd50e8
+2025-03-29 10:42:11 [32minfo[39m: PUT /api/table/2888deea-65e2-4fbc-97b1-f77a3acd50e8
+2025-03-29 10:42:16 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-29 10:42:40 [32minfo[39m: DELETE /api/table/2888deea-65e2-4fbc-97b1-f77a3acd50e8
+2025-03-29 10:42:43 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-29 10:44:10 [32minfo[39m: POST /api/table
+2025-03-29 10:44:18 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-29 10:44:31 [32minfo[39m: GET /api/menu
+2025-03-29 10:44:31 [32minfo[39m: GET /api/menu
+2025-03-29 10:44:33 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:44:33 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:44:49 [32minfo[39m: GET /api/menu
+2025-03-29 10:44:49 [32minfo[39m: GET /api/menu
+2025-03-29 10:44:52 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:44:52 [32minfo[39m: GET /api/restaurants
+2025-03-29 10:44:52 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-29 10:50:30 [32minfo[39m: GET /api/orders
+2025-03-29 10:54:04 [32minfo[39m: GET /api/orders
+2025-03-29 10:54:54 [32minfo[39m: GET /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4
+2025-03-29 10:54:58 [32minfo[39m: GET /api/table/4247fe29-b01c-463d-946c-439d3d73470e
+2025-03-29 10:55:02 [32minfo[39m: GET /api/orders
+2025-03-29 10:55:02 [32minfo[39m: GET /api/orders
+2025-03-29 11:01:53 [32minfo[39m: GET /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4
+2025-03-29 11:02:17 [32minfo[39m: PUT /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4/status
+2025-03-29 11:02:28 [32minfo[39m: GET /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4
+2025-03-29 11:02:56 [32minfo[39m: PUT /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4/status
+2025-03-29 11:03:02 [32minfo[39m: PUT /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4/status
+2025-03-29 11:03:23 [32minfo[39m: PUT /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4/status
+2025-03-29 11:03:34 [32minfo[39m: PUT /api/orders/33cc769c-d992-4fa9-a8f6-097ec17ff564/status
+2025-03-29 11:03:54 [32minfo[39m: GET /api/orders
+2025-03-29 11:03:54 [32minfo[39m: GET /api/orders
+2025-03-29 11:04:14 [32minfo[39m: GET /api/orders/3e031ea6-f887-49bd-acec-b9d26b027bb4
+2025-03-29 11:06:46 [32minfo[39m: GET /api/bookings
+2025-03-29 11:17:09 [32minfo[39m: GET /api/bookings
+2025-03-29 11:18:03 [32minfo[39m: PUT /api/bookings/5e1312dd-3f4a-4b10-bbfc-f70de77b9611/status
+2025-03-29 11:25:33 [32minfo[39m: GET /api/users
+2025-03-29 11:27:03 [32minfo[39m: GET /api/auth/me
+2025-03-29 11:41:56 [32minfo[39m: GET /api/users
+2025-03-29 11:41:56 [32minfo[39m: GET /api/users
+2025-03-29 13:44:27 [32minfo[39m: GET /api/users
+2025-03-29 13:44:28 [32minfo[39m: GET /api/users
+2025-03-29 13:53:11 [32minfo[39m: GET /api/auth/me
+2025-03-29 13:53:11 [32minfo[39m: GET /api/auth/me
+2025-03-29 13:54:14 [32minfo[39m: GET /api/menu
+2025-03-29 13:54:14 [32minfo[39m: GET /api/bookings
+2025-03-29 13:54:14 [32minfo[39m: GET /api/orders
+2025-03-29 13:54:14 [32minfo[39m: GET /api/restaurants
+2025-03-29 13:54:14 [32minfo[39m: GET /api/menu
+2025-03-29 13:54:14 [32minfo[39m: GET /api/restaurants
+2025-03-29 13:54:14 [32minfo[39m: GET /api/bookings
+2025-03-29 13:54:14 [32minfo[39m: GET /api/orders
+2025-03-29 13:55:52 [32minfo[39m: GET /api/auth/logout
+2025-03-29 13:57:44 [32minfo[39m: GET /api/auth/me
+2025-03-29 13:58:13 [32minfo[39m: GET /api/auth/logout
+2025-03-29 13:58:40 [32minfo[39m: POST /api/auth/login
+2025-03-29 13:58:41 [32minfo[39m: GET /api/orders
+2025-03-29 13:58:41 [32minfo[39m: GET /api/bookings
+2025-03-29 13:58:41 [32minfo[39m: GET /api/menu
+2025-03-29 13:58:41 [32minfo[39m: GET /api/restaurants
+2025-03-29 13:58:41 [32minfo[39m: GET /api/menu
+2025-03-29 13:58:41 [32minfo[39m: GET /api/restaurants
+2025-03-29 13:58:41 [32minfo[39m: GET /api/orders
+2025-03-29 13:58:41 [32minfo[39m: GET /api/bookings
+2025-03-29 14:01:11 [32minfo[39m: SIGINT received, shutting down Prisma client gracefully

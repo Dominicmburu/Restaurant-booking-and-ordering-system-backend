@@ -498,3 +498,25 @@ Argument `data`: Invalid value provided. Expected OrderItemCreateInput or OrderI
 2025-03-28 08:46:01 [31merror[39m: Not authorized to access this route
 2025-03-28 08:46:01 [31merror[39m: Not authorized to access this route
 2025-03-28 08:46:01 [31merror[39m: Not authorized to access this route
+2025-03-29 10:08:08 [31merror[39m: 
+Invalid `prisma.menuItem.findMany()` invocation in
+C:\DEV\TurkNazz\restaurant-booking-and-ordering-system-backend\src\controllers\menuController.js:125:45
+
+  122 // @access  Public
+  123 exports.getMenuItemsByCategory = async (req, res, next) => {
+  124   try {
+→ 125     const menuItems = await prisma.menuItem.findMany({
+            where: {
+              category: "kebabs"
+            },
+            include: {
+              restaurant: true,
+              ~~~~~~~~~~
+          ?   orderItems?: true
+            }
+          })
+
+Unknown field `restaurant` for include statement on model `MenuItem`. Available options are marked with ?.
+2025-03-29 10:08:30 [31merror[39m: Menu item not found with id of fdeb1a9e-a756-4238-929e-33e05894805c
+2025-03-29 10:09:27 [31merror[39m: Menu item not found with id of 1ae8f2ab-ae38-41b7-9772-963cf431bb44
+2025-03-29 10:26:25 [31merror[39m: Restaurant not found with id of 8b96c3d7-dbc9-4b24-b1ff-282b27d77f20

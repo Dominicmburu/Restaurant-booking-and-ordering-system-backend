@@ -2,9 +2,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const ErrorResponse = require('../utils/errors');
 
-// @desc    Get all menu items
-// @route   GET /api/menu
-// @access  Public
+
 exports.getMenuItems = async (req, res, next) => {
   try {
     const menuItems = await prisma.menuItem.findMany();
@@ -19,9 +17,6 @@ exports.getMenuItems = async (req, res, next) => {
   }
 };
 
-// @desc    Get single menu item
-// @route   GET /api/menu/:id
-// @access  Public
 exports.getMenuItem = async (req, res, next) => {
   try {
     const menuItem = await prisma.menuItem.findUnique({

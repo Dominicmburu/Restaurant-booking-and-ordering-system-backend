@@ -1,20 +1,15 @@
-// src/controllers/paymentController.js
 const { verifyCheckoutSession, checkPaymentIntentStatus } = require('../services/paymentService');
 const { logger } = require('../utils/logger');
 const ErrorResponse = require('../utils/errors');
 const prisma = require('../config/database').prisma;
 const { sendOrderConfirmation } = require('../services/emailService');
 
-// @desc    Verify payment session
-// @route   GET /api/payments/verify-session/:sessionId
-// @access  Public
 exports.verifySession = async (req, res, next) => {
   try {
     const { sessionId } = req.params;
     
     const sessionStatus = await verifyCheckoutSession(sessionId);
     
-    // If payment is complete, update the order
     if (sessionStatus.isComplete && sessionStatus.orderId) {
       const order = await prisma.order.update({
         where: { id: sessionStatus.orderId },
@@ -33,7 +28,6 @@ exports.verifySession = async (req, res, next) => {
         }
       });
       
-      // Send confirmation email if payment succeeded
       const customer = order.user || {
         name: sessionStatus.customer?.name || '',
         email: sessionStatus.customer?.email || '',

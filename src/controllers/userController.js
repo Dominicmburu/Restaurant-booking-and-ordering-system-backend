@@ -5,21 +5,14 @@ const ErrorResponse = require('../utils/errors');
 const { sendTokenResponse } = require('../config/jwt');
 const { sendPasswordResetEmail } = require('../services/emailService');
 
-// Helper function to hash password using crypto
 const hashPassword = (password) => {
-  // Generate a random salt
   const salt = crypto.randomBytes(16).toString('hex');
   
-  // Use PBKDF2 to hash the password with the salt
   const hash = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
   
-  // Return both salt and hash, separated by a colon
   return `${salt}:${hash}`;
 };
 
-// @desc    Get all users
-// @route   GET /api/users
-// @access  Private/Admin
 exports.getUsers = async (req, res, next) => {
   try {
     const users = await prisma.user.findMany({
